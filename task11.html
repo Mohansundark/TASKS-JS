@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Registration Form</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      background: linear-gradient(45deg, #FFC3A0, #FFAFBD);
+    }
+
+    form,
+    h1 {
+      margin: 3% 0 0 39%;
+    }
+  </style>
+</head>
+
+<body>
+  <h1 style="color:blue">Registration Form</h1>
+  <form id="registration-form" class="needs-validation" novalidate>
+    <div class="form-group">
+      <label for="first-name">First name:</label>
+      <input type="text" class="form-control" id="first-name" name="first-name" required>
+      <div class="invalid-feedback">Please enter your first name.</div>
+    </div>
+
+    <div class="form-group">
+      <label for="last-name">Last name:</label>
+      <input type="text" class="form-control" id="last-name" name="last-name" required>
+      <div class="invalid-feedback">Please enter your last name.</div>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" class="form-control" id="email" name="email" required>
+      <div class="invalid-feedback">Please enter a valid email address.</div>
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input type="password" class="form-control" id="password" name="password" required>
+      <div class="invalid-feedback">Please enter a password.</div>
+    </div>
+
+    <div class="form-group">
+      <label for="confirm-password">Re-enter Password:</label>
+      <input type="password" class="form-control" id="confirm-password" name="confirm-password" required>
+      <div class="invalid-feedback">Please re-enter your password.</div>
+    </div>
+
+    <div class="form-group">
+      <label>Gender:</label><br>
+      <div class="form-check form-check-inline">
+        <input type="radio" class="form-check-input" id="gender-male" name="gender" value="male" required>
+        <label class="form-check-label" for="gender-male">Male</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input type="radio" class="form-check-input" id="gender-female" name="gender" value="female" required>
+        <label class="form-check-label" for="gender-female">Female</label>
+      </div>
+      <div class="invalid-feedback">Please select your gender.</div>
+    </div>
+
+    <div class="form-group">
+      <label for="age">Age:</label>
+      <input type="number" class="form-control" id="age" name="age" required>
+      <div class="invalid-feedback">Please enter your age.</div>
+    </div>
+
+    <div class="form-group">
+      <label for="phone">Phone Number:</label>
+      <input type="tel" class="form-control" id="phone" name="phone" required>
+      <div class="invalid-feedback">Please enter a valid phone number.</div>
+    </div>
+
+    <div class="form-group">
+      <label for="address">Address:</label>
+      <input type="text" class="form-control" id="address" name="address" required>
+      <div class="invalid-feedback">Please enter your address.</div>
+    </div>
+
+    <div class="form-group">
+      <label for="state">State:</label>
+      <input type="text" class="form-control" id="state" name="state" required>
+      <div class="invalid-feedback">Please enter your state.</div>
+    </div>
+
+    <div class="form-group">
+      <label for="country">Country:</label>
+      <select class="form-control" id="country" name="country" required>
+        <option value="">Choose your country</option>
+        <option value="USA">USA</option>
+        <option value="Canada">Canada</option>
+        <option value="India">India</option>
+        <!-- Add more country options here -->
+      </select>
+      <div class="invalid-feedback">Please select your country.</div>
+    </div>
+
+    <div class="form-group">
+      <label for="languages">Language known:</label><br>
+      <div class="form-check form-check-inline">
+        <input type="checkbox" class="form-check-input" id="language-english" name="languages[]" value="English" required>
+        <label class="form-check-label" for="language-english">English</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input type="checkbox" class="form-check-input" id="language-kannada" name="languages[]" value="Kannada" required>
+        <label class="form-check-label" for="language-kannada">Kannada</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input type="checkbox" class="form-check-input" id="language-hindi" name="languages[]" value="Hindi" required>
+        <label class="form-check-label" for="language-hindi">Hindi</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input type="checkbox" class="form-check-input" id="language-telugu" name="languages[]" value="Telugu" required>
+        <label class="form-check-label" for="language-telugu">Telugu</label>
+      </div>
+      <div class="invalid-feedback">Please select at least one language.</div>
+    </div>
+
+    <div class="form-group">
+      <input type="checkbox" class="form-check-input" id="declaration" name="declaration" required>
+      <label class="form-check-label" for="declaration">I hereby declare that all the above details are true.</label>
+      <div class="invalid-feedback">Please accept the declaration.</div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Register</button>
+  </form>
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    // Form validation script
+    (function() {
+      'use strict';
+      window.addEventListener('load', function() {
+        // Fetch all the forms to apply custom Bootstrap validation styles
+        var forms = document.getElementsByClassName('needs-validation');
+        // Loop over each form and prevent default submission
+        Array.prototype.filter.call(forms, function(form) {
+          form.addEventListener('submit', function(event) {
+            if (form.checkValidity() === false) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+            form.classList.add('was-validated');
+          }, false);
+        });
+      }, false);
+    })();
+  </script>
+</body>
+
+</html>
